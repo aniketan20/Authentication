@@ -6,10 +6,10 @@ require('dotenv').config();
 let currUserId = "";
 
 exports.register = async (req, res) => {
-    const { name, email, username, password, contact, address, pincode } = req.body;
+    const { name, email, username, password } = req.body;
 
     try {
-        const user = new User({ name, email, username, password, contact, address, pincode });
+        const user = new User({ name, email, username, password });
         await user.save();
 
         const payload = { userId: user._id };
