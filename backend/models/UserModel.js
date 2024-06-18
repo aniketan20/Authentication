@@ -20,47 +20,6 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    contact: {
-        type: String,
-        required: true,
-        unique: true,
-    },
-    address: {
-        type: String,
-        required: true
-    },
-    pincode: {
-        type: String,
-        required: true
-    },
-    isAdmin: {
-        type: Boolean,
-        default: false,
-    },
-    isLEStaff: {
-        type: Boolean,
-        default: false
-    },
-    isStudent: {
-        type: Boolean,
-        default: false,
-    },
-    personalStudents:{
-        type:Array,
-        default:[]
-    },
-    companyStudents:{
-        type:Array,
-        default:[]
-    },
-    couriers:{
-        type:Array,
-        default:[]
-    },
-    dsr:{
-        type:Array,
-        default:[]
-    }
 });
 
 UserSchema.pre('save', async function (next) {
