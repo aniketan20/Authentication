@@ -3,8 +3,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 const authRoutes = require('./routes/Auth');
-const addStudentRoutes = require("./routes/AddStudent");
-const addCourierRoutes = require("./routes/AddCourier");
 
 const app = express();
 const MONGO_URI = process.env.MONGO_URI;
@@ -21,11 +19,9 @@ mongoose.connect(MONGO_URI)
 })
 
 app.use("/api/auth",authRoutes);
-app.use("/api/as",addStudentRoutes);
-app.use("/api/ac", addCourierRoutes);
 
 app.get("/" , (req,res) => {
-    res.send("Hello Little Einteinz");
+    res.send("Authentication Demo");
 })
 
 const PORT = process.env.PORT || 5000;
